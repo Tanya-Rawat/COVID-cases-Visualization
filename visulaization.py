@@ -69,11 +69,6 @@ for i in range(len(country_confirmed_cases[:10])):
     visual_unique_countries.append(unique_countries[i])
     visual_confirmed_cases.append(country_confirmed_cases[i])
 
-visual_unique_countries1 = [] 
-for i in range(len(country_death_cases[:10])):
-    visual_unique_countries1.append(unique_countries1[i])
-    visual_confirmed_cases.append(country_death_cases[i])
-
 
 visual_unique_countries.append('Others')
 visual_confirmed_cases.append(others)
