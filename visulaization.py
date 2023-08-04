@@ -50,6 +50,7 @@ for i in unique_countries:
 for i in no_cases:
     unique_countries.remove(i)
 
+
 # sort countries by the number of confirmed cases
 unique_countries = [k for k, v in sorted(zip(unique_countries, country_confirmed_cases), key=operator.itemgetter(1), reverse=True)]
 for i in range(len(unique_countries)):
