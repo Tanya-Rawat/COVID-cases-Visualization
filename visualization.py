@@ -23,11 +23,18 @@ def plot_bar_graphs(x, y, title):
 def plot_pie_charts(x, y, title):
     # more muted color 
     c = ['lightcoral', 'rosybrown', 'sandybrown', 'navajowhite', 'gold',
-        'khaki', 'lightskyblue', 'turquoise', 'lightslategrey', 'thistle', 'pink']
-    plt.figure(figsize=(20,15))
+         'khaki', 'lightskyblue', 'turquoise', 'lightslategrey', 'thistle', 'pink']
+    plt.figure(figsize=(20, 15))
     plt.title(title, size=20)
-    plt.pie(y, colors=c,shadow=True)
-    plt.legend(x, loc='best', fontsize=12)
+    patches, texts, autotexts = plt.pie(y, labels=x, colors=c, autopct='%1.1f%%', shadow=True, startangle=140)
+
+    # Improve legend placement
+    plt.legend(patches, x, loc="best", fontsize=12, bbox_to_anchor=(1.2, 0.5), title="Countries", title_fontsize='14')
+
+    for text, autotext in zip(texts, autotexts):
+        text.set_size(12)
+        autotext.set_size(12)
+
     plt.show()
 
 #Unique countries for confirmed cases , deaths, recovery and active cases
